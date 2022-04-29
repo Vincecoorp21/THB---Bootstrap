@@ -108,7 +108,7 @@ showScreen();
 function fdelete() {
   localStorage.clear();
   //Te borras los datos que te muestra en el div
-  showUser.remove();
+  //showUser.remove();
   //Te borra los datos de la consola
   console.clear();
 }
