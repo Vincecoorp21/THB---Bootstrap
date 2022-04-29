@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="style.css" />
 
-    <title>My First Web</title>
+    <title>My First Bootstrap Web</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
@@ -27,10 +27,18 @@
             /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Crear User</a>
+            <a class="nav-link" href="#">Creating users</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Mostrar User</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://docs.google.com/presentation/d/17SOf5uZ259zVhifoxrZH31vQLpEsnnnt__klVDoiKng/edit#slide=id.g1228f88dd31_1_52"
+              target="_blanck"
+              >Bootstrap for Dummies</a
+            >
           </li>
         </ul>
       </div>
@@ -86,11 +94,15 @@
         <button type="submit" class="btn btn-primary" id="submit">
           Submit
         </button>
+        <button type="button" class="btn btn-primary" id="reset-users">
+          Delete
+        </button>
       </form>
     </div>
     <div class="container-fluid p-5 bg-warning text-white text-">
-      <h2>Mi Primer formulario BootStrap</h2>
+      <h2>Show me the Users!</h2>
       <p>Resize this responsive page to see the effect!</p>
+      <div id="show-users"></div>
     </div>
 
     <div class="container mt-5">
