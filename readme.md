@@ -1,6 +1,6 @@
 # Acerca del Proyecto-
 
-## Bootstrap LocalStorage Proyecto
+## Proyecto Bootstrap LocalStorage 
 
 Este proyecto ha sido construido utilizando las tecnologías Bootstrap (HTML-CSS) y Javascript.
 
