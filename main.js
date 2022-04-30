@@ -26,7 +26,7 @@ submit.addEventListener('click', fvalidate);
 /***************FUNCION VALIDACION**********/
 
 function fvalidate(e) {
-  e.preventDefault();
+  //e.preventDefault();
   if (
     name.value === '' ||
     mail.value === '' ||
@@ -52,26 +52,25 @@ function fvalidate(e) {
   ) {
     //msg.innerHTML = 'Mínimo 8 caracteres, al menos una letra y un número';
     msg.innerHTML = `<div class="alert alert-warning" role="alert">
-    Please, put min 8 characteres, one letter and one number!
+    Please, put min 8 characteres, one capital letter and one number!
   </div>`;
   } else {
     //msg.innerHTML = "Yeah, it's perfect Mate!";
     msg.innerHTML = `<div class="alert alert-warning" role="alert">
     Yeah, it's perfect Mate!!
   </div>`;
+    fsubmit(e);
   }
   setTimeout(() => {
     msg.innerHTML = '';
   }, 3000);
-
-  fsubmit(e);
 }
 
-let users = [];
+//let users = [];
 
-/*************FUNCIÓN AÑADIR USUARIOS*************/
-function fsubmit(r) {
-  r.preventDefault();
+/*************FUNCTION ADD USERS*************/
+function fsubmit(e) {
+  e.preventDefault();
   let users = JSON.parse(localStorage.getItem('users')) || [];
 
   let users2 = {
@@ -86,7 +85,7 @@ function fsubmit(r) {
   showScreen();
 }
 
-/************FUNCION MOSTRAR USUARIOS*********************/
+/************FUNCTION SHOW USERS*********************/
 function showScreen() {
   let data = JSON.parse(localStorage.getItem('users'));
   for (let i = 0; i < data.length; i++) {
@@ -96,19 +95,18 @@ function showScreen() {
     <div class="card-body">
       <h4 class="card-title">User: ${data[i].name}</h4>
       <p class="card-text">Email: ${data[i].email} </p>
-      <a href="#" class="btn btn-primary">See Profile</a>
+      <a href="#" class="btn btn-primary">Go to main</a>
     </div>
   </div>`;
   }
 }
-
 showScreen();
-
 /**********FUNCTION DELETE*************/
 function fdelete() {
+  //j.preventDefault();
   localStorage.clear();
   //Te borras los datos que te muestra en el div
-  //showUser.remove();
+  showUser.remove();
   //Te borra los datos de la consola
   console.clear();
 }
