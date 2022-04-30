@@ -78,37 +78,85 @@ function fvalidate(e) {
 ```
 
 - AÑADIR USUARIOS
-- MOSTRAR USUARIOS POR PANTALLA
-- BORRAR USUARIOS
 
 ```
-# code block
-function myFunction1(){
-document.querySelector(‘.key1’).classList.toggle(‘show’);
+function fsubmit(e) {
+  e.preventDefault();
+  let users = JSON.parse(localStorage.getItem('users')) || [];
+
+  let users2 = {
+    name: name.value,
+    email: mail.value,
+    pasword1: pass1.value,
+    password2: pass2.value,
+  };
+  users.push(users2);
+  localStorage.setItem('users', JSON.stringify(users));
+  showUser.innerHTML = '';
+  showScreen();
+}
+
+```
+
+- MOSTRAR USUARIOS POR PANTALLA
+
+Mostraremos los usuarios mediantes unas Bootstrap Cards creadas por defecto, las cuales mostraremos a través del DOM.
+
+```
+function showScreen() {
+  let data = JSON.parse(localStorage.getItem('users'));
+  for (let i = 0; i < data.length; i++) {
+    //showUser.innerHTML += `<p>${data[i].name}</p><p>${data[i].email}</p>`;
+    showUser.innerHTML += `<div class="card" style="width:400px">
+    <img class="card-img-top" src="imgs/Jurassic_World_dom_insta.jpeg" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">User: ${data[i].name}</h4>
+      <p class="card-text">Email: ${data[i].email} </p>
+      <a href="#" class="btn btn-primary">Go to main</a>
+    </div>
+  </div>`;
+  }
 }
 ```
 
-![foto](assets/Instagram_menu_card.png)
+- BORRAR USUARIOS
 
-### Getting Started - Installation
-
-To deploy this project you must clone the repository through the following link:
+Borra todos los usuarios almacenados en LocalStorage
 
 ```
-https://github.com/Vincecoorp21/Instagram-Clone
+function fdelete() {
+  //j.preventDefault();
+  localStorage.clear();
+  //Te borras los datos que te muestra en el div
+  showUser.remove();
+  //Te borra los datos de la consola
+  console.clear();
+}
+
+```
+
+### Instalación
+
+Para poder visualizar el proyectos tendrás que clonarte el repositorio por medio del siguiente Link:
+
+```
+https://github.com/Vincecoorp21/THB---Bootstrap
 ```
 
 #### Vista Previa
 
-![foto](assets/Instagram_login_page.png)
-![foto](assets/Instagram_user_page.png)
+![foto](imgs/Bootstrap readme 1.png)
+![foto](imgs/Bootstrap readme 2.png)
 
-## Author
+## Autores
+
+Este proyecto ha sido desarrollado conjuntamente por:
+
+👤 **Imanol Fuertes**
+
+- Github: [@Imi21](https://github.com/Imi21)
 
 👤 **Vince BC**
 
 - Twitter: [@VinceTrend](https://twitter.com/VinceTrend)
 - Github: [@Vincecoorp21](https://github.com/Vincecoorp21)
-- Linkedin:[@vibarcar](https://www.linkedin.com/in/vibarcar/)
-
-This project was developed By [Vicente Barberá - Vince BC -](https://github.com/Vincecoorp21)
