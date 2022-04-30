@@ -34,7 +34,7 @@ function fvalidate(e) {
     pass2.value === ''
   ) {
     msg.innerHTML = `<div class="alert alert-warning" role="alert">
-    Please fill all fields!
+    Please fill in all fields!
   </div>`;
   } else if (/(\w+?@\w+?\x2E.+)/.test(mail.value) !== true) {
     msg.innerHTML = `<div class="alert alert-warning" role="alert">
@@ -52,7 +52,7 @@ function fvalidate(e) {
   ) {
     //msg.innerHTML = 'Mínimo 8 caracteres, al menos una letra y un número';
     msg.innerHTML = `<div class="alert alert-warning" role="alert">
-    Please, put min 8 characteres, one capital letter and one number!
+    Password must contain 8 characteres, one uppercase letter and one number!
   </div>`;
   } else {
     //msg.innerHTML = "Yeah, it's perfect Mate!";
