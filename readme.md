@@ -145,8 +145,8 @@ https://github.com/Vincecoorp21/THB---Bootstrap
 
 #### Vista Previa
 
-![foto](imgs/Bootstrap readme 1.png)
-![foto](imgs/Bootstrap readme 2.png)
+![foto](/imgs/Bootstrap readme 1.png)
+![foto](/imgs/Bootstrap readme 2.png)
 
 ## Autores
 
